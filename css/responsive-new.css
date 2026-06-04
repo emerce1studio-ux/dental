@@ -1,0 +1,70 @@
+/* ============================================
+   RESPONSIVE DESIGN - ESTADÍSTICAS Y FAQ
+   ============================================ */
+
+@media (max-width: 768px) {
+    .estadisticas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .estadistica-numero {
+        font-size: 2.5rem;
+    }
+
+    .estadistica-numero .signo {
+        font-size: 1.5rem;
+    }
+
+    .estadistica-card h3 {
+        font-size: var(--fs-xl);
+    }
+
+    .estadistica-card p {
+        font-size: var(--fs-sm);
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .faq-titulo {
+        padding: var(--spacing-md);
+    }
+
+    .faq-contenido p {
+        padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .estadisticas-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .estadistica-numero {
+        font-size: 2rem;
+    }
+
+    .estadistica-numero .signo {
+        font-size: 1.2rem;
+    }
+
+    .estadistica-card h3 {
+        font-size: var(--fs-lg);
+    }
+
+    .estadistica-card p {
+        font-size: var(--fs-xs);
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-titulo span {
+        font-size: var(--fs-sm);
+    }
+}

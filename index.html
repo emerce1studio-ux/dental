@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Studio Dental Center - Clínica dental profesional en Aguas Zarcas">
-    <title>Studio Dental Center - Clínica Dental Profesional</title>
+    <meta name="description" content="Studio Dental Center - Clínica dental profesional en Aguas Zarcas, Costa Rica. Servicios de odontología general, ortodoncia, implantes y más.">
+    <meta name="keywords" content="clínica dental, dentista, Aguas Zarcas, Costa Rica, odontología, blanqueamiento, implantes">
+    <meta name="author" content="Studio Dental Center">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://axkia888-del.github.io/clinica-dental/">
+    <meta property="og:title" content="Studio Dental Center - Clínica Dental Profesional">
+    <meta property="og:description" content="Tu sonrisa es nuestra prioridad. Servicios dentales de calidad en Aguas Zarcas.">
+    <meta property="og:image" content="https://axkia888-del.github.io/clinica-dental/images/logo.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://axkia888-del.github.io/clinica-dental/">
+    <meta property="twitter:title" content="Studio Dental Center - Clínica Dental Profesional">
+    <meta property="twitter:description" content="Tu sonrisa es nuestra prioridad. Servicios dentales de calidad en Aguas Zarcas.">
+    <meta property="twitter:image" content="https://axkia888-del.github.io/clinica-dental/images/logo.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo.jpeg">
+    <link rel="apple-touch-icon" href="images/logo.jpeg">
+    
+    <title>Studio Dental Center - Clínica Dental Profesional en Aguas Zarcas</title>
     
     <!-- Preload de Fuentes -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Raleway:wght@300;400;600&display=swap" as="style">
@@ -20,7 +42,29 @@
     <!-- CSS propio -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles-new.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/responsive-new.css">
+    
+    <!-- Schema.org / Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Studio Dental Center",
+      "image": "https://axkia888-del.github.io/clinica-dental/images/logo.jpeg",
+      "description": "Clínica dental profesional en Aguas Zarcas, Costa Rica",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aguas Zarcas",
+        "addressRegion": "San Carlos",
+        "addressCountry": "CR"
+      },
+      "telephone": "+50685855758",
+      "url": "https://axkia888-del.github.io/clinica-dental/",
+      "priceRange": "$$"
+    }
+    </script>
 </head>
 <body>
     <!-- LOADING ANIMATION -->
@@ -46,9 +90,9 @@
                 <li><a href="#nosotros">Sobre Nosotros</a></li>
                 <li><a href="#equipo">Equipo</a></li>
                 <li><a href="#porqueelejiros">¿Por qué?</a></li>
-                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#estadisticas">Estadísticas</a></li>
+                <li><a href="#faq">Preguntas</a></li>
                 <li><a href="#horarios">Horarios</a></li>
-                <li><a href="#mapa">Ubicación</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             
@@ -301,6 +345,122 @@
         </div>
     </section>
 
+    <!-- ESTADÍSTICAS SECTION -->
+    <section class="estadisticas" id="estadisticas">
+        <div class="container">
+            <h2>Nuestro Impacto</h2>
+            <p class="section-subtitle">Números que hablan por nosotros</p>
+            
+            <div class="estadisticas-grid">
+                <div class="estadistica-card">
+                    <div class="estadistica-numero">
+                        <span class="contador" data-numero="500">0</span>
+                        <span class="signo">+</span>
+                    </div>
+                    <h3>Pacientes Satisfechos</h3>
+                    <p>Más de 500 pacientes confían en nuestro servicio</p>
+                </div>
+
+                <div class="estadistica-card">
+                    <div class="estadistica-numero">
+                        <span class="contador" data-numero="5">0</span>
+                        <span class="signo">+</span>
+                    </div>
+                    <h3>Años de Experiencia</h3>
+                    <p>Desde 2019 brindando servicios de calidad</p>
+                </div>
+
+                <div class="estadistica-card">
+                    <div class="estadistica-numero">
+                        <span class="contador" data-numero="1000">0</span>
+                        <span class="signo">+</span>
+                    </div>
+                    <h3>Procedimientos Realizados</h3>
+                    <p>Más de 1000 procedimientos exitosos</p>
+                </div>
+
+                <div class="estadistica-card">
+                    <div class="estadistica-numero">
+                        <span class="contador" data-numero="100">0</span>
+                        <span class="signo">%</span>
+                    </div>
+                    <h3>Satisfacción Garantizada</h3>
+                    <p>Compromiso con la excelencia en cada caso</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Resuelve tus dudas sobre nuestros servicios</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-titulo">
+                        <span>¿Duele el blanqueamiento dental?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-contenido">
+                        <p>No, el blanqueamiento dental con lámpara profesional es un procedimiento indoloro. Algunos pacientes pueden experimentar sensibilidad temporal que desaparece en pocas horas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-titulo">
+                        <span>¿Cuánto cuesta una limpieza dental?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-contenido">
+                        <p>Los precios varían según el caso. Te recomendamos contactarnos vía WhatsApp para una cotización personalizada según tus necesidades específicas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-titulo">
+                        <span>¿Aceptan tarjeta de crédito?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-contenido">
+                        <p>Sí, aceptamos tarjeta de crédito y débito. También puedes consultar sobre planes de pago disponibles contactándonos directamente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-titulo">
+                        <span>¿Cuánto dura un tratamiento de ortodoncia?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-contenido">
+                        <p>La duración depende de cada caso. Generalmente varía entre 18 a 24 meses. En tu consulta inicial haremos un diagnóstico completo para darte un tiempo estimado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-titulo">
+                        <span>¿Es seguro el procedimiento de implantes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-contenido">
+                        <p>Sí, los implantes dentales son muy seguros cuando se realizan por profesionales certificados. Utilizamos materiales de última generación y seguimos protocolos de higiene rigurosos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-titulo">
+                        <span>¿Cuál es el horario de atención?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-contenido">
+                        <p>Atendemos de lunes a viernes: Mañana 9:00 AM - 12:00 PM y Tarde 1:30 PM - 5:00 PM. Los domingos estamos cerrados. Para emergencias contáctanos vía WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- RESULTADOS SECTION -->
     <section class="resultados" id="resultados">
         <div class="container">
@@ -310,7 +470,7 @@
             <div class="resultados-content">
                 <div class="resultados-texto">
                     <h3>Casos de Éxito</h3>
-                    <p>En Studio Dental Center nos enorgullece mostrar los resultados de nuestro trabajo. Cada sonrisa transformada es el reflejo de nuestro compromiso con la excelencia y la satisfacción de nuestros pacientes.</p>
+                    <p>En Studio Dental Center nos enorgullece mostrar los resultados de nuestro trabajo. Cada sonrisa transformada es el reflejo de nuestro compromiso con la excelencia.</p>
                     <p>Utilizamos las técnicas más avanzadas y materiales de la más alta calidad para garantizar resultados duraderos y naturales.</p>
                     <ul class="resultados-list">
                         <li><i class="fas fa-check"></i> Carillas Dentales de alta durabilidad</li>
@@ -466,7 +626,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Studio Dental Center</h3>
-                    <p>Tu clínica dental de confianza</p>
+                    <p>Tu clínica dental de confianza en Aguas Zarcas</p>
                 </div>
                 
                 <div class="footer-section">
@@ -475,11 +635,10 @@
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#nosotros">Sobre Nosotros</a></li>
-                        <li><a href="#equipo">Equipo</a></li>
-                        <li><a href="#porqueelejiros">¿Por qué?</a></li>
-                        <li><a href="#resultados">Resultados</a></li>
+                        <li><a href="#estadisticas">Estadísticas</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
                         <li><a href="#horarios">Horarios</a></li>
-                        <li><a href="#mapa">Ubicación</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 
@@ -506,5 +665,6 @@
     <script src="js/main.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/whatsapp.js"></script>
+    <script src="js/features.js"></script>
 </body>
 </html>
