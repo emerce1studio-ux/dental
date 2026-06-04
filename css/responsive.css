@@ -1,0 +1,561 @@
+/* ============================================
+   RESPONSIVE DESIGN - 1200px
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .navbar-container {
+        gap: var(--spacing-lg);
+    }
+
+    .navbar-menu {
+        gap: var(--spacing-md);
+    }
+
+    .navbar-menu a {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--fs-xs);
+    }
+
+    .navbar-logo span {
+        font-size: var(--fs-xs);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - 992px
+   ============================================ */
+
+@media (max-width: 992px) {
+    .navbar-container {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .navbar-logo span {
+        min-width: auto;
+        font-size: var(--fs-sm);
+    }
+
+    .navbar-menu {
+        min-width: auto;
+        gap: var(--spacing-md);
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 55px;
+    }
+
+    .navbar-menu a {
+        padding: var(--spacing-sm) var(--spacing-sm);
+        font-size: var(--fs-xs);
+    }
+
+    .navbar-menu a.activo::after {
+        bottom: -5px;
+        left: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+
+    .navbar-whatsapp {
+        font-size: var(--fs-xs);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .mapa-content {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-botones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: var(--spacing-md) var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .navbar-logo {
+        gap: var(--spacing-xs);
+        width: 100%;
+        order: 1;
+    }
+
+    .navbar-logo img {
+        height: 40px;
+    }
+
+    .navbar-logo span {
+        font-size: var(--fs-base);
+        min-width: auto;
+    }
+
+    .navbar-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--color-blanco);
+        gap: 0;
+        border-top: 2px solid var(--color-gris-claro);
+        box-shadow: var(--shadow-lg);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 999;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-width: auto;
+    }
+
+    .navbar-menu.activo {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        border-bottom: 1px solid var(--color-gris-claro);
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-menu li a {
+        display: block;
+        padding: var(--spacing-lg) var(--spacing-lg);
+        color: var(--color-texto);
+        text-decoration: none;
+        border-radius: 0;
+        font-size: var(--fs-base);
+    }
+
+    .navbar-menu a:hover {
+        background-color: var(--color-claro);
+    }
+
+    .navbar-menu a.activo {
+        background-color: var(--color-claro);
+        color: var(--color-primario);
+        border-left: 5px solid var(--color-primario);
+        padding-left: calc(var(--spacing-lg) - 5px);
+    }
+
+    .navbar-menu a.activo::after {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 2;
+    }
+
+    .navbar-whatsapp {
+        display: none;
+    }
+
+    .dark-mode-toggle {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .hero-content h1 {
+        font-size: var(--fs-4xl);
+    }
+
+    .hero-content p {
+        font-size: var(--fs-base);
+    }
+
+    .hero {
+        padding: var(--spacing-2xl) var(--spacing-md);
+        min-height: 350px;
+    }
+
+    section {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    section h2 {
+        font-size: var(--fs-3xl);
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-lg);
+    }
+
+    .servicio-card {
+        padding: var(--spacing-lg);
+    }
+
+    .servicios-imagenes {
+        grid-template-columns: 1fr;
+    }
+
+    .servicio-icon {
+        font-size: 2.5rem;
+    }
+
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .porqueelejiros-content {
+        grid-template-columns: 1fr;
+    }
+
+    .porqueelejiros-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resultados-content {
+        grid-template-columns: 1fr;
+    }
+
+    .horarios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .horario-card {
+        padding: var(--spacing-lg);
+    }
+
+    .mapa-content {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-botones {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .btn-mapa {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--fs-sm);
+    }
+
+    .contacto-info {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MÓVIL
+   ============================================ */
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: var(--spacing-sm) var(--spacing-md);
+        gap: var(--spacing-sm);
+    }
+
+    .navbar-logo {
+        gap: var(--spacing-xs);
+        width: auto;
+        order: 1;
+    }
+
+    .navbar-logo img {
+        height: 35px;
+    }
+
+    .navbar-logo span {
+        font-size: var(--fs-sm);
+    }
+
+    .hamburger {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .hamburger span {
+        width: 24px;
+        height: 2.5px;
+    }
+
+    .dark-mode-toggle {
+        order: 2;
+        margin-left: auto;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .dark-mode-toggle i {
+        font-size: var(--fs-lg);
+    }
+
+    .hero {
+        padding: var(--spacing-2xl) var(--spacing-sm);
+        min-height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: var(--fs-3xl);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-content p {
+        font-size: var(--fs-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--fs-sm);
+    }
+
+    section {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    section h2 {
+        font-size: var(--fs-2xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--fs-base);
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .servicio-card {
+        padding: var(--spacing-lg);
+    }
+
+    .servicio-icon {
+        font-size: 2rem;
+    }
+
+    .servicio-card h3 {
+        font-size: var(--fs-lg);
+    }
+
+    .servicio-card p {
+        font-size: var(--fs-sm);
+    }
+
+    .servicios-imagenes {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .about-text h2 {
+        font-size: var(--fs-2xl);
+    }
+
+    .about-text p {
+        font-size: var(--fs-sm);
+    }
+
+    .equipo-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .equipo-imagen {
+        height: auto;
+    }
+
+    .porqueelejiros-content {
+        grid-template-columns: 1fr;
+    }
+
+    .porqueelejiros-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .porqueelejiros-card {
+        padding: var(--spacing-lg);
+    }
+
+    .porqueelejiros-icon {
+        font-size: 2rem;
+    }
+
+    .porqueelejiros-imagenes {
+        gap: var(--spacing-lg);
+    }
+
+    .resultados-content {
+        grid-template-columns: 1fr;
+    }
+
+    .resultados-texto h3 {
+        font-size: var(--fs-2xl);
+    }
+
+    .resultados-grid {
+        gap: var(--spacing-md);
+    }
+
+    .horarios-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .horario-card {
+        padding: var(--spacing-lg);
+    }
+
+    .horario-icon {
+        font-size: 2.5rem;
+    }
+
+    .horario-card h3 {
+        font-size: var(--fs-xl);
+    }
+
+    /* ============================================
+       MAPA OCULTO EN MÓVIL - CORRECCIÓN DEFINITIVA
+       ============================================ */
+
+    .mapa-container {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }
+
+    .mapa-content {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .mapa-info {
+        grid-column: 1;
+        padding: 0;
+    }
+
+    .mapa-info h3 {
+        font-size: var(--fs-xl);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .mapa-detalles {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+    }
+
+    .detalle-item {
+        gap: var(--spacing-sm);
+    }
+
+    .mapa-botones {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+
+    .btn-mapa {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--fs-sm);
+        width: 100%;
+    }
+
+    .btn-mapa i {
+        font-size: var(--fs-base);
+    }
+
+    .contacto-info {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .info-item {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .info-item i {
+        font-size: var(--fs-xl);
+    }
+
+    .footer {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .footer-section h3 {
+        font-size: var(--fs-base);
+    }
+
+    .social-links {
+        font-size: var(--fs-lg);
+        gap: var(--spacing-sm);
+    }
+
+    .whatsapp-flotante {
+        width: 55px;
+        height: 55px;
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        font-size: var(--fs-xl);
+    }
+}
+
+/* ============================================
+   DESKTOP - AJUSTES ADICIONALES
+   ============================================ */
+
+@media (min-width: 1024px) {
+    .servicios-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .servicios-imagenes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .equipo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .porqueelejiros-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resultados-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .resultados-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .horarios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mapa-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mapa-botones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contacto-info {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

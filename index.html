@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Studio Dental Center - Clínica dental profesional en Aguas Zarcas">
+    <title>Studio Dental Center - Clínica Dental Profesional</title>
+    
+    <!-- Preload de Fuentes -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Raleway:wght@300;400;600&display=swap" as="style">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- LOADING ANIMATION -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="images/logo.jpeg" alt="Studio Dental Center Logo" loading="lazy" class="logo-light">
+                <img src="images/logo-dark.jpeg" alt="Studio Dental Center Logo Dark" loading="lazy" class="logo-dark">
+                <span>Studio Dental Center</span>
+            </div>
+            
+            <ul class="navbar-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#porqueelejiros">¿Por qué?</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#mapa">Ubicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            
+            <a href="https://wa.me/50685855758?text=Hola%20Studio%20Dental%20Center%20quiero%20agendar%20una%20cita" 
+               class="navbar-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <button class="dark-mode-toggle" title="Alternar modo oscuro">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio" style="background-image: url('images/fondo.png'); background-size: cover; background-position: center;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Tu Sonrisa es Nuestra Prioridad</h1>
+            <p>Atención profesional y personalizada en cada procedimiento dental</p>
+            <a href="https://wa.me/50685855758?text=Hola%20Studio%20Dental%20Center%20quiero%20agendar%20una%20cita" class="btn btn-primary" target="_blank">
+                <i class="fab fa-whatsapp"></i> Agendar Cita
+            </a>
+        </div>
+    </section>
+
+    <!-- SERVICIOS SECTION -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p class="section-subtitle">Contamos con los mejores profesionales y tecnología</p>
+            
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Blanqueamiento Dental</h3>
+                    <p>Consigue una sonrisa blanca y radiante con nuestro blanqueamiento dental con lámpara profesional</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-align-justify"></i>
+                    </div>
+                    <h3>Ortodoncia</h3>
+                    <p>Alineamiento perfecto de tus dientes para una sonrisa hermosa y funcional</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-bridge"></i>
+                    </div>
+                    <h3>Puentes</h3>
+                    <p>Restauración fija que remplaza uno o varios dientes ausentes para restaurar la función y la estética de la sonrisa</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Coronas</h3>
+                    <p>Restauración fija que cubre completamente un diente dañado, debilitado devolviéndole su forma, función y apariencia natural</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Carillas</h3>
+                    <p>Se colocan sobre la parte frontal de los dientes para mejorar su forma color y apariencia</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Limpiezas Dentales</h3>
+                    <p>Mantén tu sonrisa fresca y saludable con nuestras limpiezas profesionales</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-bandage"></i>
+                    </div>
+                    <h3>Calzas (Resinas)</h3>
+                    <p>Restauración de caries con materiales de última generación</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Odontopediatría</h3>
+                    <p>Cuidado especializado de la salud dental de los más pequeños con atención amable</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Estudio de Ortodoncia</h3>
+                    <p>Evaluación completa que permite diagnosticar y planificar el tratamiento de ortodoncia de forma precisa y personalizada</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Implantes Dentales</h3>
+                    <p>Implantes de última generación para reemplazar dientes perdidos permanentemente</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Cirugía de Cordales</h3>
+                    <p>Extracción segura y profesional de Cordales con técnicas modernas y mínimo dolor</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3>Frenectomía</h3>
+                    <p>Procedimiento quirúrgico sencillo que consiste en eliminar el frenillo cuando causa problemas funcionales o estéticos</p>
+                </div>
+            </div>
+
+            <div class="servicios-imagenes">
+                <div class="servicios-imagen">
+                    <img src="images/1.jpg" alt="Consultorio Studio Dental Center" loading="lazy">
+                </div>
+                <div class="servicios-imagen">
+                    <img src="images/7.jpg" alt="Odontopediatría - Studio Dental Center" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="nosotros" id="nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre Nosotros</h2>
+                    <p>Studio Dental Center es una clínica dental moderna ubicada en Aguas Zarcas, dedicada a proporcionar atención dental de calidad con un enfoque personalizado.</p>
+                    <p>Nuestro equipo de profesionales altamente calificados utiliza la tecnología más avanzada para garantizar los mejores resultados en cada procedimiento.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Equipo profesional certificado</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tecnología de punta</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Atención personalizada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO SECTION -->
+    <section class="equipo" id="equipo">
+        <div class="container">
+            <h2>Nuestro Equipo</h2>
+            <p class="section-subtitle">Profesionales altamente calificados listos para tu sonrisa</p>
+            
+            <div class="equipo-grid">
+                <div class="equipo-card">
+                    <img src="images/2.jpg" alt="Equipo Studio Dental Center" class="equipo-imagen" loading="lazy">
+                </div>
+                <div class="equipo-card">
+                    <img src="images/8.jpg" alt="Controles Odontológicos - Dra. Liz Luna" class="equipo-imagen" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS SECTION -->
+    <section class="porqueelejiros" id="porqueelejiros">
+        <div class="container">
+            <h2>¿Por qué elegirnos?</h2>
+            <p class="section-subtitle">Somos la mejor opción para tu sonrisa</p>
+            
+            <div class="porqueelejiros-content">
+                <div class="porqueelejiros-grid">
+                    <div class="porqueelejiros-card">
+                        <div class="porqueelejiros-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Atención Personalizada</h3>
+                        <p>Cada paciente es único. Nos enfocamos en entender tus necesidades específicas y ofrecerte soluciones a medida.</p>
+                    </div>
+
+                    <div class="porqueelejiros-card">
+                        <div class="porqueelejiros-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Experiencia desde 2019</h3>
+                        <p>Más de 5 años de trayectoria brindando servicios dentales de calidad a la comunidad de Aguas Zarcas.</p>
+                    </div>
+
+                    <div class="porqueelejiros-card">
+                        <div class="porqueelejiros-icon">
+                            <i class="fas fa-map-location-dot"></i>
+                        </div>
+                        <h3>Ubicación Conveniente</h3>
+                        <p>Estamos ubicados en Aguas Zarcas, fácil acceso para todos nuestros pacientes de la zona.</p>
+                    </div>
+
+                    <div class="porqueelejiros-card">
+                        <div class="porqueelejiros-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>Tecnología Moderna</h3>
+                        <p>Contamos con equipos de última generación para garantizar diagnósticos precisos y tratamientos efectivos.</p>
+                    </div>
+
+                    <div class="porqueelejiros-card">
+                        <div class="porqueelejiros-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Profesionales Certificados</h3>
+                        <p>Nuestro equipo está altamente capacitado y certificado en las más modernas técnicas dentales.</p>
+                    </div>
+                </div>
+
+                <div class="porqueelejiros-imagenes">
+                    <div class="porqueelejiros-imagen">
+                        <img src="images/3.jpg" alt="Consultorio Studio Dental Center" loading="lazy">
+                    </div>
+                    <div class="porqueelejiros-imagen">
+                        <img src="images/4.jpg" alt="Especialista Cirugía de Cordales" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS SECTION -->
+    <section class="resultados" id="resultados">
+        <div class="container">
+            <h2>Nuestros Resultados</h2>
+            <p class="section-subtitle">Mira la transformación que logramos en nuestros pacientes</p>
+            
+            <div class="resultados-content">
+                <div class="resultados-texto">
+                    <h3>Casos de Éxito</h3>
+                    <p>En Studio Dental Center nos enorgullece mostrar los resultados de nuestro trabajo. Cada sonrisa transformada es el reflejo de nuestro compromiso con la excelencia y la satisfacción de nuestros pacientes.</p>
+                    <p>Utilizamos las técnicas más avanzadas y materiales de la más alta calidad para garantizar resultados duraderos y naturales.</p>
+                    <ul class="resultados-list">
+                        <li><i class="fas fa-check"></i> Carillas Dentales de alta durabilidad</li>
+                        <li><i class="fas fa-check"></i> Restauraciones estéticas naturales</li>
+                        <li><i class="fas fa-check"></i> Resultados garantizados</li>
+                        <li><i class="fas fa-check"></i> Máxima satisfacción del paciente</li>
+                    </ul>
+                </div>
+
+                <div class="resultados-grid">
+                    <div class="resultado-card">
+                        <img src="images/5.jpg" alt="Caso de Éxito - Carillas Dentales" loading="lazy">
+                    </div>
+                    <div class="resultado-card">
+                        <img src="images/6.jpg" alt="Caso de Éxito - Restauración" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HORARIOS SECTION -->
+    <section class="horarios" id="horarios">
+        <div class="container">
+            <h2>Nuestro Horario</h2>
+            <p class="section-subtitle">Visitanos en nuestros horarios de atención</p>
+            
+            <div class="horarios-grid">
+                <div class="horario-card">
+                    <div class="horario-icon">
+                        <i class="fas fa-calendar-days"></i>
+                    </div>
+                    <h3>Lunes a Viernes</h3>
+                    <div class="horario-tiempo">
+                        <p><strong>Mañana:</strong> 9:00 AM - 12:00 PM</p>
+                        <p><strong>Tarde:</strong> 1:30 PM - 5:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="horario-card">
+                    <div class="horario-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Información</h3>
+                    <p>Domingo cerrado. Para emergencias contáctanos vía WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA SECTION -->
+    <section class="mapa" id="mapa">
+        <div class="container">
+            <h2>Ubícanos</h2>
+            <p class="section-subtitle">Visitanos en nuestra clínica ubicada en Aguas Zarcas</p>
+            
+            <div class="mapa-content">
+                <div class="mapa-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.5647849472697!2d-84.33939!3d10.37441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0d8e8e8e8e8e9%3A0x1234567890abcdef!2sStudio%20Dental%20Center!5e0!3m2!1ses!2scr!4v1234567890"
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="mapa-info">
+                    <h3>¿Dónde estamos?</h3>
+                    <p><strong>Aguas Zarcas, Costa Rica</strong></p>
+                    <p>Ubicados entre Musmanni y BCR</p>
+                    
+                    <div class="mapa-detalles">
+                        <div class="detalle-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Aguas Zarcas, San Carlos</p>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="fas fa-phone"></i>
+                            <p><a href="tel:+50685855758">+506 8585-5758</a></p>
+                        </div>
+                        <div class="detalle-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Lunes - Viernes: 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mapa-botones">
+                        <a href="https://maps.google.com/?q=10.37441,-84.33939" 
+                           class="btn-mapa btn-google-maps" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-map-location-dot"></i> Google Maps
+                        </a>
+                        <a href="https://maps.apple.com/?address=Aguas%20Zarcas,%20Costa%20Rica&adr=1&ll=10.37441,-84.33939&q=Studio%20Dental%20Center" 
+                           class="btn-mapa btn-apple-maps" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-apple"></i> Apple Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO SECTION -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p class="section-subtitle">¿Necesitas agendar una cita?</p>
+            
+            <div class="contacto-info">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>8585-5758</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/50685855758" target="_blank">Chatea con nosotros</a>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Ubicación</h3>
+                        <p>Aguas Zarcas, Costa Rica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/50685855758?text=Hola%20Studio%20Dental%20Center%20quiero%20agendar%20una%20cita" 
+       class="whatsapp-flotante" target="_blank" title="Chatea con nosotros">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" title="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Studio Dental Center</h3>
+                    <p>Tu clínica dental de confianza</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#porqueelejiros">¿Por qué?</a></li>
+                        <li><a href="#resultados">Resultados</a></li>
+                        <li><a href="#horarios">Horarios</a></li>
+                        <li><a href="#mapa">Ubicación</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/studiodentalcr/" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/studiodentalcent" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Studio Dental Center. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/whatsapp.js"></script>
+</body>
+</html>
