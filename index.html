@@ -10,17 +10,17 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://axkia888-del.github.io/clinica-dental/">
+    <meta property="og:url" content="https://milicaotoya-maker.github.io/Dental/">
     <meta property="og:title" content="Studio Dental Center - Clínica Dental Profesional">
     <meta property="og:description" content="Tu sonrisa es nuestra prioridad. Servicios dentales de calidad en Aguas Zarcas.">
-    <meta property="og:image" content="https://axkia888-del.github.io/clinica-dental/images/logo.jpeg">
+    <meta property="og:image" content="https://milicaotoya-maker.github.io/Dental/images/logo.jpeg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://axkia888-del.github.io/clinica-dental/">
+    <meta property="twitter:url" content="https://milicaotoya-maker.github.io/Dental/">
     <meta property="twitter:title" content="Studio Dental Center - Clínica Dental Profesional">
     <meta property="twitter:description" content="Tu sonrisa es nuestra prioridad. Servicios dentales de calidad en Aguas Zarcas.">
-    <meta property="twitter:image" content="https://axkia888-del.github.io/clinica-dental/images/logo.jpeg">
+    <meta property="twitter:image" content="https://milicaotoya-maker.github.io/Dental/images/logo.jpeg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/logo.jpeg">
@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="css/responsive-new.css">
     <link rel="stylesheet" href="css/estadisticas-mejorada.css">
     <link rel="stylesheet" href="css/footer-mejorado.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/waze-button.css">
     
     <!-- Schema.org / Structured Data -->
     <script type="application/ld+json">
@@ -54,7 +56,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Studio Dental Center",
-      "image": "https://axkia888-del.github.io/clinica-dental/images/logo.jpeg",
+      "image": "https://milicaotoya-maker.github.io/Dental/images/logo.jpeg",
       "description": "Clínica dental profesional en Aguas Zarcas, Costa Rica",
       "address": {
         "@type": "PostalAddress",
@@ -63,7 +65,7 @@
         "addressCountry": "CR"
       },
       "telephone": "+50685855758",
-      "url": "https://axkia888-del.github.io/clinica-dental/",
+      "url": "https://milicaotoya-maker.github.io/Dental/",
       "priceRange": "$$"
     }
     </script>
@@ -81,14 +83,15 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo">
-                <img src="images/logo.jpeg" alt="Studio Dental Center Logo" loading="lazy" class="logo-light">
-                <img src="images/logo-dark.jpeg" alt="Studio Dental Center Logo Dark" loading="lazy" class="logo-dark">
+                <img src="images/logo.jpeg" alt="Studio Dental Center Logo" loading="eager" class="logo-light">
+                <img src="images/logo-dark.jpeg" alt="Studio Dental Center Logo Dark" loading="eager" class="logo-dark">
                 <span>Studio Dental Center</span>
             </div>
             
             <ul class="navbar-menu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#nosotros">Sobre Nosotros</a></li>
                 <li><a href="#equipo">Equipo</a></li>
                 <li><a href="#porqueelejiros">¿Por qué?</a></li>
@@ -241,6 +244,99 @@
             </div>
         </div>
     </section>
+
+    <!-- GALERÍA SECTION -->
+    <section class="galeria" id="galeria">
+        <div class="container">
+            <h2>Galería</h2>
+            <p class="section-subtitle">Conoce nuestro nuevo equipo además de nuestras modernas instalaciones</p>
+            
+            <div class="galeria-tabs">
+                <button class="tab-btn activo" data-filter="todo">
+                    <span>TODO</span>
+                </button>
+                <button class="tab-btn" data-filter="equipo">
+                    <span>EQUIPO</span>
+                </button>
+                <button class="tab-btn" data-filter="instalaciones">
+                    <span>INSTALACIONES</span>
+                </button>
+                <button class="tab-btn" data-filter="clinica">
+                    <span>CLÍNICA</span>
+                </button>
+            </div>
+
+            <div class="galeria-grid">
+                <!-- Imagen 1 - Equipo -->
+                <div class="galeria-item" data-category="equipo">
+                    <div class="galeria-img-wrapper">
+                        <img src="images/I1.jpeg" alt="Equipo Dental" loading="lazy">
+                        <div class="galeria-overlay">
+                            <button class="galeria-btn-zoom" data-image="images/I1.jpeg" title="Ver imagen completa">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 2 - Instalaciones -->
+                <div class="galeria-item" data-category="instalaciones">
+                    <div class="galeria-img-wrapper">
+                        <img src="images/I2.jpeg" alt="Instalaciones Modernas" loading="lazy">
+                        <div class="galeria-overlay">
+                            <button class="galeria-btn-zoom" data-image="images/I2.jpeg" title="Ver imagen completa">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 3 - Clínica -->
+                <div class="galeria-item" data-category="clinica">
+                    <div class="galeria-img-wrapper">
+                        <img src="images/I3.jpeg" alt="Clínica Studio Dental" loading="lazy">
+                        <div class="galeria-overlay">
+                            <button class="galeria-btn-zoom" data-image="images/I3.jpeg" title="Ver imagen completa">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 4 - Equipo -->
+                <div class="galeria-item" data-category="equipo">
+                    <div class="galeria-img-wrapper">
+                        <img src="images/I4.jpeg" alt="Equipo Profesional" loading="lazy">
+                        <div class="galeria-overlay">
+                            <button class="galeria-btn-zoom" data-image="images/I4.jpeg" title="Ver imagen completa">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagen 5 - Instalaciones -->
+                <div class="galeria-item" data-category="instalaciones">
+                    <div class="galeria-img-wrapper">
+                        <img src="images/I5.jpeg" alt="Instalaciones Premium" loading="lazy">
+                        <div class="galeria-overlay">
+                            <button class="galeria-btn-zoom" data-image="images/I5.jpeg" title="Ver imagen completa">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Zoom -->
+    <div class="galeria-modal" id="galeriaModal">
+        <div class="galeria-modal-content">
+            <button class="galeria-modal-close">&times;</button>
+            <img id="galeriaModalImg" src="" alt="Imagen ampliada">
+        </div>
+    </div>
 
     <!-- ABOUT SECTION -->
     <section class="nosotros" id="nosotros">
@@ -406,7 +502,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-contenido">
-                        <p>No, el blanqueamiento dental con lámpara profesional es un procedimiento indoloro. Algunos pacientes pueden experimentar sensibilidad temporal que desaparece en pocas horas o días.</p>
+                        <p>No, el blanqueamiento dental con lámpara profesional es un procedimiento indoloro. Algunos pacientes pueden experimentar sensibilidad temporal que desaparece en pocas horas.</p>
                     </div>
                 </div>
 
@@ -446,7 +542,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-contenido">
-                        <p>Sí, los implantes dentales son muy seguros cuando se realizan por profesionales certificados. Utilizamos materiales de última generación y seguimos protocolos de higiene rigurosos para garantizar tu seguridad.</p>
+                        <p>Sí, los implantes dentales son muy seguros cuando se realizan por profesionales certificados. Utilizamos materiales de última generación y seguimos protocolos de higiene exhaustivos.</p>
                     </div>
                 </div>
 
@@ -531,7 +627,7 @@
             
             <div class="mapa-content">
                 <div class="mapa-container">
-                 <iframe 
+                    <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.5647849472697!2d-84.33939!3d10.37441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0d8e8e8e8e8e9%3A0x1234567890abcdef!2sStudio%20Dental%20Center!5e0!3m2!1ses!2scr!4v1234567890"
                         width="100%" 
                         height="450" 
@@ -566,6 +662,10 @@
                         <a href="https://maps.google.com/?q=10.37441,-84.33939" 
                            class="btn-mapa btn-google-maps" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-map-location-dot"></i> Google Maps
+                        </a>
+                        <a href="https://www.waze.com/ul?ll=10.37441,-84.33939&navigate=yes&z=15" 
+                           class="btn-mapa btn-waze-maps" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-location-dot"></i> Waze
                         </a>
                         <a href="https://maps.apple.com/?address=Aguas%20Zarcas,%20Costa%20Rica&adr=1&ll=10.37441,-84.33939&q=Studio%20Dental%20Center" 
                            class="btn-mapa btn-apple-maps" target="_blank" rel="noopener noreferrer">
@@ -636,6 +736,7 @@
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
                         <li><a href="#nosotros">Sobre Nosotros</a></li>
                         <li><a href="#estadisticas">Estadísticas</a></li>
                         <li><a href="#faq">Preguntas Frecuentes</a></li>
@@ -668,5 +769,6 @@
     <script src="js/navbar.js"></script>
     <script src="js/whatsapp.js"></script>
     <script src="js/features.js"></script>
+    <script src="js/galeria.js"></script>
 </body>
 </html>

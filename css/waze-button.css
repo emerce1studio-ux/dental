@@ -1,0 +1,35 @@
+/* ============================================
+   BOTONES DE MAPAS - ESTILOS ACTUALIZADOS
+   ============================================ */
+
+.btn-waze-maps {
+    background-color: #4FCE5D;
+    color: var(--color-blanco);
+}
+
+.btn-waze-maps:hover {
+    background-color: #3db84e;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-waze-maps i {
+    font-size: var(--fs-lg);
+    transition: all var(--transition-fast);
+}
+
+.btn-waze-maps:hover i {
+    transform: scale(1.2);
+}
+
+/* Responsive para botones con 3 opciones */
+@media (max-width: 768px) {
+    .mapa-botones {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .btn-mapa {
+        width: 100%;
+    }
+}
