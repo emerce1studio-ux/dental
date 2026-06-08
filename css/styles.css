@@ -154,6 +154,7 @@ body.dark-mode .logo-dark {
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* NAVBAR MENU - oculto por defecto, se muestra solo en desktop grande */
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -257,6 +258,7 @@ body.dark-mode .logo-dark {
     transform: rotate(20deg);
 }
 
+/* HAMBURGER - visible por defecto en todos lados */
 .hamburger {
     display: none;
     flex-direction: column;

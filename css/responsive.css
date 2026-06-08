@@ -1,100 +1,8 @@
 /* ============================================
-   RESPONSIVE DESIGN - 1200px
+   RESPONSIVE DESIGN - 1200px (NAVBAR HAMBURGUESA)
    ============================================ */
 
 @media (max-width: 1200px) {
-    .navbar-container {
-        gap: var(--spacing-lg);
-    }
-
-    .navbar-menu {
-        gap: var(--spacing-md);
-    }
-
-    .navbar-menu a {
-        padding: var(--spacing-xs) var(--spacing-sm);
-        font-size: var(--fs-xs);
-    }
-
-    .navbar-logo span {
-        font-size: var(--fs-xs);
-    }
-}
-
-/* ============================================
-   RESPONSIVE DESIGN - 992px
-   ============================================ */
-
-@media (max-width: 992px) {
-    .navbar-container {
-        flex-wrap: wrap;
-        gap: var(--spacing-md);
-    }
-
-    .navbar-logo span {
-        min-width: auto;
-        font-size: var(--fs-sm);
-    }
-
-    .navbar-menu {
-        min-width: auto;
-        gap: var(--spacing-md);
-        order: 3;
-        width: 100%;
-        justify-content: flex-start;
-        margin-left: 55px;
-    }
-
-    .navbar-menu a {
-        padding: var(--spacing-sm) var(--spacing-sm);
-        font-size: var(--fs-xs);
-    }
-
-    .navbar-menu a.activo::after {
-        bottom: -5px;
-        left: var(--spacing-sm);
-        right: var(--spacing-sm);
-    }
-
-    .navbar-whatsapp {
-        font-size: var(--fs-xs);
-        padding: var(--spacing-sm) var(--spacing-md);
-    }
-
-    .mapa-content {
-        grid-template-columns: 1fr;
-    }
-
-    .mapa-botones {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ============================================
-   RESPONSIVE DESIGN - TABLET
-   ============================================ */
-
-@media (max-width: 768px) {
-    .navbar-container {
-        padding: var(--spacing-md) var(--spacing-md);
-        gap: var(--spacing-md);
-    }
-
-    .navbar-logo {
-        gap: var(--spacing-xs);
-        width: 100%;
-        order: 1;
-    }
-
-    .navbar-logo img {
-        height: 50px;
-    }
-
-    .navbar-logo span {
-        font-size: var(--fs-base);
-        min-width: auto;
-    }
-
     .navbar-menu {
         display: none;
         position: fixed;
@@ -112,7 +20,6 @@
         margin: 0;
         padding: 0;
         width: 100%;
-        min-width: auto;
     }
 
     .navbar-menu.activo {
@@ -152,7 +59,66 @@
 
     .hamburger {
         display: flex;
-        order: 2;
+    }
+
+    .navbar-whatsapp {
+        font-size: var(--fs-xs);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - 992px
+   ============================================ */
+
+@media (max-width: 992px) {
+    .navbar-container {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .navbar-logo span {
+        min-width: auto;
+        font-size: var(--fs-sm);
+    }
+
+    .navbar-whatsapp {
+        font-size: var(--fs-xs);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .mapa-content {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-botones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: var(--spacing-md) var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .navbar-logo {
+        gap: var(--spacing-xs);
+        width: 100%;
+        order: 1;
+    }
+
+    .navbar-logo img {
+        height: 50px;
+    }
+
+    .navbar-logo span {
+        font-size: var(--fs-base);
+        min-width: auto;
     }
 
     .navbar-whatsapp {
@@ -419,10 +385,6 @@
         font-size: var(--fs-xl);
     }
 
-    /* ============================================
-       MAPA OCULTO EN MÓVIL - CORRECCIÓN DEFINITIVA
-       ============================================ */
-
     .mapa-container {
         display: none !important;
         visibility: hidden !important;
@@ -510,10 +472,6 @@
         font-size: var(--fs-lg);
         gap: var(--spacing-sm);
     }
-
-    /* ============================================
-       BOTONES FLOTANTES - MEJOR ESPACIADO
-       ============================================ */
 
     .whatsapp-flotante {
         width: 55px;

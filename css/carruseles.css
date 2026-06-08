@@ -1,0 +1,368 @@
+/* ============================================
+   ESTILOS GENERALES PARA CARRUSELES
+   Escalable y modular para múltiples tipos de contenido
+   ============================================ */
+
+.carrusel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.carrusel-item {
+    flex-shrink: 0;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* ============================================
+   BOTONES DE NAVEGACIÓN - OCULTOS
+   Los carruseles usan autoplay + swipe táctil
+   ============================================ */
+
+.carrusel-btn,
+.casos-prev,
+.casos-next,
+.testimonios-btn,
+.testimonios-prev-bottom,
+.testimonios-next-bottom {
+    display: none !important;
+}
+
+/* ============================================
+   INDICADORES (DOTS)
+   ============================================ */
+
+.carrusel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-gris-claro);
+    border: 2px solid var(--color-gris);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dot:hover {
+    background-color: var(--color-gris);
+    transform: scale(1.2);
+}
+
+.dot.activo {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    width: 28px;
+    border-radius: var(--radius-full);
+}
+
+/* ============================================
+   SECCIÓN CASOS DE ÉXITO
+   ============================================ */
+
+.casos-exito {
+    background-color: var(--color-blanco);
+}
+
+.casos-exito .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.casos-exito-header {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.casos-exito-header h2 {
+    font-size: var(--fs-4xl);
+    color: var(--color-secundario);
+    margin-bottom: var(--spacing-md);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.casos-exito-header .section-subtitle {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.casos-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.casos-carrusel-container {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: var(--color-claro);
+}
+
+.casos-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.caso-card {
+    flex-shrink: 0;
+    width: 100%;
+    padding: var(--spacing-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: linear-gradient(135deg, rgba(22, 163, 156, 0.1) 0%, rgba(92, 197, 190, 0.1) 100%);
+}
+
+.caso-card img {
+    max-width: 100%;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    object-fit: cover;
+    animation: zoomIn 0.6s ease-out;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.casos-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.casos-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   SECCIÓN TESTIMONIOS
+   ============================================ */
+
+.testimonios {
+    background-color: var(--color-claro);
+}
+
+.testimonios-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.testimonios-header h2 {
+    font-size: var(--fs-4xl);
+    color: var(--color-secundario);
+    margin-bottom: var(--spacing-md);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.testimonios-carrusel-wrapper {
+    position: relative;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.testimonios-carrusel-container {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.testimonios-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.testimonio-card {
+    flex-shrink: 0;
+    width: 100%;
+    padding: var(--spacing-2xl);
+    background-color: var(--color-blanco);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin: 0 var(--spacing-md);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.testimonio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.testimonio-nombre {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--color-secundario);
+    margin: 0;
+}
+
+.testimonio-rating {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+.star {
+    font-size: var(--fs-lg);
+    color: #FFD700;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.star.empty {
+    color: var(--color-gris-claro);
+}
+
+.testimonio-texto {
+    color: var(--color-gris);
+    font-size: var(--fs-base);
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+    border-left: 4px solid var(--color-primario);
+    padding-left: var(--spacing-lg);
+}
+
+.testimonios-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2xl);
+}
+
+.testimonios-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLET
+   ============================================ */
+
+@media (min-width: 768px) {
+    .caso-card {
+        min-height: 450px;
+    }
+
+    .testimonio-card {
+        width: calc(50% - var(--spacing-md));
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - DESKTOP
+   ============================================ */
+
+@media (min-width: 1024px) {
+    .caso-card {
+        min-height: 500px;
+    }
+
+    .testimonio-card {
+        width: calc(33.333% - var(--spacing-md));
+    }
+}
+
+/* ============================================
+   TOUCH SUPPORT (Móvil)
+   ============================================ */
+
+@media (max-width: 767px) {
+    .caso-card {
+        min-height: 300px;
+        padding: var(--spacing-lg);
+    }
+
+    .caso-card img {
+        max-height: 250px;
+    }
+
+    .testimonio-card {
+        width: 100%;
+        margin: 0;
+    }
+
+    .testimonios-carrusel-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot.activo {
+        width: 24px;
+    }
+}
+
+/* ============================================
+   ANIMACIONES ADICIONALES
+   ============================================ */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+body.dark-mode .testimonio-card {
+    background-color: var(--color-dark-card);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .casos-carrusel-container {
+    background: linear-gradient(135deg, rgba(22, 163, 156, 0.2) 0%, rgba(92, 197, 190, 0.2) 100%);
+}
+
+body.dark-mode .caso-card {
+    background: linear-gradient(135deg, rgba(22, 163, 156, 0.15) 0%, rgba(92, 197, 190, 0.15) 100%);
+}
