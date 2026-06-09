@@ -378,3 +378,7 @@ body.dark-mode .footer-bottom p {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
+
+body.dark-mode .footer-section h3 {
+    color: #ffffff !important;
+}
