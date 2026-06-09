@@ -544,6 +544,65 @@
 }
 
 /* ============================================
+   CONTROLES MÓVIL/TABLET - FLECHITAS
+   ============================================ */
+
+/* Ocultar flechitas en desktop */
+.casos-prev-mobile,
+.casos-next-mobile {
+    display: none;
+}
+
+/* Mostrar solo en móvil/tablet */
+@media (max-width: 1024px) {
+    .casos-prev-mobile,
+    .casos-next-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-primario);
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .casos-prev-mobile:hover,
+    .casos-next-mobile:hover {
+        background: var(--color-secundario);
+        transform: scale(1.1);
+    }
+
+    .casos-prev-mobile:disabled,
+    .casos-next-mobile:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: var(--color-gris-claro);
+    }
+
+    /* Alinear controles horizontalmente */
+    .casos-controles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+}
+
+/* Desktop - solo puntitos sin flechitas */
+@media (min-width: 1025px) {
+    .casos-controles {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* ============================================
    DARK MODE SUPPORT
    ============================================ */
 

@@ -372,8 +372,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const casoExitoCarrusel = new Carrusel({
         containerSelector: '.casos-carrusel-container',
         trackSelector: '.casos-track',
-        prevBtnSelector: '.casos-prev',
-        nextBtnSelector: '.casos-next',
+        prevBtnSelector: '.casos-prev, .casos-prev-mobile',
+        nextBtnSelector: '.casos-next, .casos-next-mobile',
         dotsSelector: '.casos-dots',
         itemSelector: '.caso-card',
         itemsPerView: {
