@@ -218,11 +218,164 @@ class Carrusel {
 }
 
 // ============================================
+// FUNCIONALIDAD PARA MODAL DE VIDEOS
+// ============================================
+
+function inicializarVideoModal() {
+    // Crear el modal si no existe
+    if (!document.getElementById('videoModal')) {
+        const modal = document.createElement('div');
+        modal.id = 'videoModal';
+        modal.className = 'video-modal';
+        modal.innerHTML = `
+            <div class="video-modal-content">
+                <button class="video-modal-close">&times;</button>
+                <video id="videoModalPlayer" controls style="width: 100%; height: 100%;">
+                    Tu navegador no soporta videos
+                </video>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    // Agregar estilos del modal si no existen
+    if (!document.getElementById('videoModalStyles')) {
+        const styles = document.createElement('style');
+        styles.id = 'videoModalStyles';
+        styles.innerHTML = `
+            .video-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.95);
+                z-index: 9999;
+                animation: fadeIn 0.3s ease;
+            }
+
+            .video-modal.activo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .video-modal-content {
+                position: relative;
+                width: 90%;
+                height: 90%;
+                max-width: 1200px;
+                max-height: 700px;
+                background: #000;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            .video-modal-close {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                color: #000;
+                font-size: 32px;
+                cursor: pointer;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                transition: all 0.3s ease;
+            }
+
+            .video-modal-close:hover {
+                background: rgba(255, 255, 255, 1);
+                transform: scale(1.1);
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            @media (max-width: 768px) {
+                .video-modal-content {
+                    width: 95%;
+                    height: 95%;
+                    max-height: 500px;
+                }
+
+                .video-modal-close {
+                    top: 10px;
+                    right: 10px;
+                    font-size: 28px;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        `;
+        document.head.appendChild(styles);
+    }
+
+    // Event listeners para abrir/cerrar modal
+    const modal = document.getElementById('videoModal');
+    const closeBtn = document.querySelector('.video-modal-close');
+
+    closeBtn.addEventListener('click', cerrarVideoModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            cerrarVideoModal();
+        }
+    });
+
+    // Cerrar modal con ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('activo')) {
+            cerrarVideoModal();
+        }
+    });
+}
+
+function abrirVideoModal(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoModalPlayer');
+    
+    videoPlayer.src = videoSrc;
+    modal.classList.add('activo');
+    videoPlayer.play();
+}
+
+function cerrarVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoModalPlayer');
+    
+    videoPlayer.pause();
+    videoPlayer.src = '';
+    modal.classList.remove('activo');
+}
+
+// ============================================
 // INICIALIZACIÓN DE CARRUSELES
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🎠 Carruseles cargados');
+
+    // Inicializar modal de videos
+    inicializarVideoModal();
+
+    // Agregar listeners a los videos para abrirlos en modal
+    const videos = document.querySelectorAll('.video-placeholder video');
+    videos.forEach(video => {
+        video.style.cursor = 'pointer';
+        video.addEventListener('click', () => {
+            const videoSrc = video.querySelector('source').src;
+            abrirVideoModal(videoSrc);
+        });
+    });
 
     // Carrusel de Casos de Éxito
     const casoExitoCarrusel = new Carrusel({
@@ -253,6 +406,23 @@ document.addEventListener('DOMContentLoaded', function() {
             mobile: 1,
             tablet: 2,
             desktop: 3
+        },
+        autoplay: true,
+        autoplayInterval: 5000
+    });
+
+    // Carrusel de Experiencias Reales
+    const experienciasCarrusel = new Carrusel({
+        containerSelector: '.experiencias-carrusel-container',
+        trackSelector: '.experiencias-track',
+        prevBtnSelector: '.experiencias-prev',
+        nextBtnSelector: '.experiencias-next',
+        dotsSelector: '.experiencias-dots',
+        itemSelector: '.experiencia-card',
+        itemsPerView: {
+            mobile: 1,
+            tablet: 1,
+            desktop: 1
         },
         autoplay: true,
         autoplayInterval: 5000
