@@ -1,6 +1,5 @@
 /* ============================================
    ESTILOS GENERALES PARA CARRUSELES
-   Escalable y modular para múltiples tipos de contenido
    ============================================ */
 
 .carrusel-wrapper {
@@ -25,22 +24,15 @@
 .carrusel-item {
     flex-shrink: 0;
     width: 100%;
-    opacity: 1;
-    transition: opacity 0.6s ease-in-out;
 }
 
 /* ============================================
-   BOTONES DE NAVEGACIÓN - OCULTOS
-   Los carruseles usan autoplay + swipe táctil
+   BOTONES DE NAVEGACIÓN BASE
+   (se muestran/ocultan según breakpoint)
    ============================================ */
 
-.carrusel-btn,
-.casos-prev,
-.casos-next,
-.testimonios-btn,
-.testimonios-prev-bottom,
-.testimonios-next-bottom {
-    display: none !important;
+.carrusel-btn {
+    display: none;
 }
 
 /* ============================================
@@ -101,7 +93,6 @@
     font-size: var(--fs-4xl);
     color: var(--color-secundario);
     margin-bottom: var(--spacing-md);
-    animation: fadeInUp 0.6s ease-out;
 }
 
 .casos-exito-header .section-subtitle {
@@ -130,7 +121,7 @@
 
 .caso-card {
     flex-shrink: 0;
-    width: 100%;
+    width: 100%; /* el JS lo sobreescribe según itemsPerView */
     padding: var(--spacing-2xl);
     display: flex;
     align-items: center;
@@ -147,14 +138,9 @@
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-xl);
     object-fit: cover;
-    animation: zoomIn 0.6s ease-out;
 }
 
-@keyframes zoomIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to   { opacity: 1; transform: scale(1); }
-}
-
+/* Controles casos */
 .casos-controles {
     display: flex;
     justify-content: center;
@@ -162,6 +148,7 @@
     padding: var(--spacing-xl) var(--spacing-md);
     max-width: 1200px;
     margin: 0 auto;
+    gap: var(--spacing-md);
 }
 
 .casos-dots {
@@ -170,6 +157,47 @@
     gap: var(--spacing-sm);
     flex-grow: 1;
     flex-wrap: wrap;
+}
+
+/* Flechas de casos — ocultas en desktop */
+.casos-prev,
+.casos-next,
+.casos-prev-mobile,
+.casos-next-mobile {
+    display: none;
+}
+
+/* Mostrar flechas en móvil/tablet */
+@media (max-width: 1024px) {
+    .casos-prev-mobile,
+    .casos-next-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-primario);
+        border: none;
+        color: white;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .casos-prev-mobile:hover,
+    .casos-next-mobile:hover {
+        background: var(--color-secundario);
+        transform: scale(1.1);
+    }
+
+    .casos-prev-mobile:disabled,
+    .casos-next-mobile:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+    }
 }
 
 /* ============================================
@@ -197,12 +225,6 @@
     font-weight: 800;
     color: var(--color-secundario);
     margin-bottom: var(--spacing-md);
-    animation: fadeInUp 0.6s ease-out;
-}
-
-.experiencias-header .section-subtitle {
-    margin-bottom: var(--spacing-2xl);
-    color: var(--color-gris);
 }
 
 .experiencias-wrapper {
@@ -217,7 +239,6 @@
     border-radius: 15px;
     background: var(--color-blanco);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
 }
 
 .experiencias-track {
@@ -241,7 +262,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeInUp 0.6s ease-out;
 }
 
 .video-placeholder video {
@@ -251,69 +271,54 @@
     cursor: pointer;
 }
 
+/* Flechas experiencias — siempre visibles */
 .experiencias-prev,
 .experiencias-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 123, 255, 0.8);
+    background: var(--color-primario);
     border: none;
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 18px;
     z-index: 10;
     transition: all 0.3s ease;
 }
 
-.experiencias-prev {
-    left: 10px;
-}
-
-.experiencias-next {
-    right: 10px;
-}
+.experiencias-prev { left: 10px; }
+.experiencias-next { right: 10px; }
 
 .experiencias-prev:hover,
 .experiencias-next:hover {
-    background: rgba(0, 123, 255, 1);
+    background: var(--color-secundario);
     transform: translateY(-50%) scale(1.1);
+}
+
+.experiencias-prev:disabled,
+.experiencias-next:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: translateY(-50%);
 }
 
 .experiencias-controles {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    gap: 15px;
+    margin-top: 20px;
 }
 
 .experiencias-dots {
     display: flex;
     gap: 10px;
     justify-content: center;
-}
-
-.experiencias-dots .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ddd;
-    border: 2px solid #ddd;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.experiencias-dots .dot.activo {
-    background: var(--color-primario);
-    border-color: var(--color-primario);
-    width: 30px;
-    border-radius: 6px;
 }
 
 /* ============================================
@@ -333,7 +338,6 @@
     font-size: var(--fs-4xl);
     color: var(--color-secundario);
     margin-bottom: var(--spacing-md);
-    animation: fadeInUp 0.6s ease-out;
 }
 
 .testimonios-carrusel-wrapper {
@@ -351,17 +355,17 @@
     display: flex;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    align-items: stretch;
 }
 
 .testimonio-card {
     flex-shrink: 0;
-    width: 100%;
+    width: 100%; /* el JS lo ajusta según itemsPerView */
     padding: var(--spacing-2xl);
     background-color: var(--color-blanco);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    margin: 0 var(--spacing-md);
-    animation: fadeInUp 0.6s ease-out;
+    box-sizing: border-box;
 }
 
 .testimonio-header {
@@ -382,13 +386,11 @@
 .testimonio-rating {
     display: flex;
     gap: var(--spacing-xs);
-    align-items: center;
 }
 
 .star {
     font-size: var(--fs-lg);
     color: #FFD700;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .star.empty {
@@ -405,68 +407,65 @@
     padding-left: var(--spacing-lg);
 }
 
+/* Controles testimonios */
 .testimonios-controles {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) 0;
 }
 
 .testimonios-dots {
     display: flex;
     justify-content: center;
     gap: var(--spacing-sm);
+    flex-grow: 1;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - TABLET
-   ============================================ */
+/* Flechas testimonios — ocultas en desktop, visibles en móvil/tablet */
+.testimonios-btn,
+.testimonios-prev,
+.testimonios-next,
+.testimonios-prev-bottom,
+.testimonios-next-bottom {
+    display: none;
+}
 
-@media (min-width: 768px) {
-    .caso-card {
-        min-height: 450px;
-    }
-
-    .testimonio-card {
-        width: calc(50% - var(--spacing-md));
-    }
-
-    .experiencias-prev,
-    .experiencias-next {
-        width: 50px;
-        height: 50px;
+@media (max-width: 1024px) {
+    .testimonios-prev-bottom,
+    .testimonios-next-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-primario);
+        border: none;
+        color: white;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
         font-size: 18px;
+        flex-shrink: 0;
     }
 
-    .experiencia-card {
-        padding: 20px;
-    }
-}
-
-/* ============================================
-   RESPONSIVE DESIGN - DESKTOP
-   ============================================ */
-
-@media (min-width: 1024px) {
-    .caso-card {
-        min-height: 500px;
+    .testimonios-prev-bottom:hover,
+    .testimonios-next-bottom:hover {
+        background: var(--color-secundario);
+        transform: scale(1.1);
     }
 
-    .testimonio-card {
-        width: calc(33.333% - var(--spacing-md));
-    }
-
-    .experiencias-reales {
-        padding: 100px 40px;
-    }
-
-    .experiencias-header h2 {
-        font-size: 2.5rem;
+    .testimonios-prev-bottom:disabled,
+    .testimonios-next-bottom:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
     }
 }
 
 /* ============================================
-   TOUCH SUPPORT (Móvil)
+   RESPONSIVE
    ============================================ */
 
 @media (max-width: 767px) {
@@ -482,10 +481,7 @@
     .testimonio-card {
         width: 100%;
         margin: 0;
-    }
-
-    .testimonios-carrusel-container {
-        padding: 0 var(--spacing-md);
+        padding: var(--spacing-lg);
     }
 
     .dot {
@@ -501,36 +497,39 @@
         padding: 50px 15px;
     }
 
-    .experiencias-header h2 {
-        font-size: 1.8rem;
-    }
-
     .experiencias-prev,
     .experiencias-next {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
     }
 
-    .experiencias-prev {
-        left: 5px;
-    }
-
-    .experiencias-next {
-        right: 5px;
-    }
+    .experiencias-prev { left: 4px; }
+    .experiencias-next { right: 4px; }
 
     .experiencia-card {
         padding: 10px;
     }
+}
 
-    .video-placeholder {
-        aspect-ratio: 16 / 9;
+@media (min-width: 768px) {
+    .caso-card {
+        min-height: 450px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .caso-card {
+        min-height: 500px;
+    }
+
+    .experiencias-reales {
+        padding: 100px 40px;
     }
 }
 
 /* ============================================
-   ANIMACIONES ADICIONALES
+   ANIMACIONES
    ============================================ */
 
 @keyframes fadeInUp {
@@ -538,72 +537,13 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(20px); }
-    to   { opacity: 1; transform: translateX(0); }
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
 }
 
 /* ============================================
-   CONTROLES MÓVIL/TABLET - FLECHITAS
-   ============================================ */
-
-/* Ocultar flechitas en desktop */
-.casos-prev-mobile,
-.casos-next-mobile {
-    display: none;
-}
-
-/* Mostrar solo en móvil/tablet */
-@media (max-width: 1024px) {
-    .casos-prev-mobile,
-    .casos-next-mobile {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--color-primario);
-        border: none;
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 18px;
-        flex-shrink: 0;
-    }
-
-    .casos-prev-mobile:hover,
-    .casos-next-mobile:hover {
-        background: var(--color-secundario);
-        transform: scale(1.1);
-    }
-
-    .casos-prev-mobile:disabled,
-    .casos-next-mobile:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        background: var(--color-gris-claro);
-    }
-
-    /* Alinear controles horizontalmente */
-    .casos-controles {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: var(--spacing-md);
-    }
-}
-
-/* Desktop - solo puntitos sin flechitas */
-@media (min-width: 1025px) {
-    .casos-controles {
-        display: flex;
-        justify-content: center;
-    }
-}
-
-/* ============================================
-   DARK MODE SUPPORT
+   DARK MODE
    ============================================ */
 
 body.dark-mode .testimonio-card {
@@ -626,24 +566,6 @@ body.dark-mode .experiencias-reales {
 body.dark-mode .experiencias-carrusel-container {
     background: var(--color-dark-card);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .experiencias-header h2 {
-    color: var(--color-dark-texto);
-}
-
-body.dark-mode .experiencias-header .section-subtitle {
-    color: var(--color-dark-texto-secondary);
-}
-
-body.dark-mode .experiencias-dots .dot {
-    background: var(--color-dark-border);
-    border-color: var(--color-dark-border);
-}
-
-body.dark-mode .experiencias-dots .dot.activo {
-    background: var(--color-primario);
-    border-color: var(--color-primario);
 }
 
 body.dark-mode .experiencias-prev,
