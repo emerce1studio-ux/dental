@@ -38,7 +38,7 @@ class Carrusel {
         this.agregarEventos();
         this.actualizarCarrusel();
         
-        if (this.autoplay && window.innerWidth >= 768) {
+        if (this.autoplay) {
             this.iniciarAutoplay();
         }
     }
@@ -127,16 +127,22 @@ class Carrusel {
 
     agregarEventos() {
         if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => this.anterior());
+            this.prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.anterior();
+            });
         }
         
         if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => this.siguiente());
+            this.nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.siguiente();
+            });
         }
 
         if (this.track) {
-            this.track.addEventListener('touchstart', (e) => this.handleSwipeStart(e), false);
-            this.track.addEventListener('touchend', (e) => this.handleSwipeEnd(e), false);
+            this.track.addEventListener('touchstart', (e) => this.handleSwipeStart(e), { passive: true });
+            this.track.addEventListener('touchend', (e) => this.handleSwipeEnd(e), { passive: true });
         }
 
         if (this.container) {
@@ -159,10 +165,10 @@ class Carrusel {
     handleSwipeEnd(e) {
         if (!this.isSwiping) return;
         this.isSwiping = false;
-        this.swipeEndX = e.changedTouches[0].clientX;
 
+        this.swipeEndX = e.changedTouches[0].clientX;
         const diff = this.swipeStartX - this.swipeEndX;
-        const threshold = 40;
+        const threshold = 30;
 
         if (Math.abs(diff) > threshold) {
             if (diff > 0) {
@@ -176,8 +182,6 @@ class Carrusel {
     }
 
     iniciarAutoplay() {
-        if (window.innerWidth < 768) return;
-        
         this.autoplayTimer = setInterval(() => {
             const totalSlides = this.getTotalSlides();
             if (this.currentIndex >= totalSlides - 1) {
@@ -194,13 +198,13 @@ class Carrusel {
     }
 
     reanudarAutoplay() {
-        if (this.autoplay && window.innerWidth >= 768) {
+        if (this.autoplay) {
             this.iniciarAutoplay();
         }
     }
 
     reiniciarAutoplay() {
-        if (this.autoplay && window.innerWidth >= 768) {
+        if (this.autoplay) {
             this.pausarAutoplay();
             this.iniciarAutoplay();
         }
