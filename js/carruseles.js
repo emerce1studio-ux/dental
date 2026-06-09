@@ -24,6 +24,7 @@ class Carrusel {
         this.isSwiping = false;
         this.swipeStartX = 0;
         this.swipeEndX = 0;
+        this.isTransitioning = false;
         
         this.init();
     }
@@ -104,26 +105,35 @@ class Carrusel {
     }
 
     anterior() {
+        if (this.isTransitioning) return;
         if (this.currentIndex > 0) {
+            this.isTransitioning = true;
             this.currentIndex--;
             this.actualizarCarrusel();
             this.reiniciarAutoplay();
+            setTimeout(() => { this.isTransitioning = false; }, 500);
         }
     }
 
     siguiente() {
+        if (this.isTransitioning) return;
         const totalSlides = this.getTotalSlides();
         if (this.currentIndex < totalSlides - 1) {
+            this.isTransitioning = true;
             this.currentIndex++;
             this.actualizarCarrusel();
             this.reiniciarAutoplay();
+            setTimeout(() => { this.isTransitioning = false; }, 500);
         }
     }
 
     irASlide(index) {
+        if (this.isTransitioning) return;
+        this.isTransitioning = true;
         this.currentIndex = Math.max(0, Math.min(index, this.getTotalSlides() - 1));
         this.actualizarCarrusel();
         this.reiniciarAutoplay();
+        setTimeout(() => { this.isTransitioning = false; }, 500);
     }
 
     agregarEventos() {
@@ -157,6 +167,7 @@ class Carrusel {
     }
 
     handleSwipeStart(e) {
+        if (this.isTransitioning) return;
         this.isSwiping = true;
         this.swipeStartX = e.touches[0].clientX;
     }
@@ -167,11 +178,11 @@ class Carrusel {
     }
 
     handleSwipeEnd(e) {
-        if (!this.isSwiping) return;
+        if (!this.isSwiping || this.isTransitioning) return;
         this.isSwiping = false;
 
         const diff = this.swipeStartX - this.swipeEndX;
-        const threshold = 50; // Mínimo de píxeles para registrar swipe
+        const threshold = 30; // Reducido para ser más sensible
 
         if (Math.abs(diff) > threshold) {
             if (diff > 0) {
