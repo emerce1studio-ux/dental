@@ -18,13 +18,12 @@ class Carrusel {
             tablet: 2,
             desktop: 3
         };
-        this.autoplay = config.autoplay !== false; // Por defecto: true
+        this.autoplay = config.autoplay !== false;
         this.autoplayInterval = config.autoplayInterval || 5000;
         this.autoplayTimer = null;
         this.isSwiping = false;
         this.swipeStartX = 0;
         this.swipeEndX = 0;
-        this.isTransitioning = false;
         
         this.init();
     }
@@ -39,7 +38,6 @@ class Carrusel {
         this.agregarEventos();
         this.actualizarCarrusel();
         
-        // Solo autoplay en desktop/tablet
         if (this.autoplay && window.innerWidth >= 768) {
             this.iniciarAutoplay();
         }
@@ -89,7 +87,6 @@ class Carrusel {
             });
         }
         
-        // Actualizar estado de botones
         this.actualizarBotones();
     }
 
@@ -106,39 +103,29 @@ class Carrusel {
     }
 
     anterior() {
-        if (this.isTransitioning) return;
         if (this.currentIndex > 0) {
-            this.isTransitioning = true;
             this.currentIndex--;
             this.actualizarCarrusel();
             this.reiniciarAutoplay();
-            setTimeout(() => { this.isTransitioning = false; }, 600);
         }
     }
 
     siguiente() {
-        if (this.isTransitioning) return;
         const totalSlides = this.getTotalSlides();
         if (this.currentIndex < totalSlides - 1) {
-            this.isTransitioning = true;
             this.currentIndex++;
             this.actualizarCarrusel();
             this.reiniciarAutoplay();
-            setTimeout(() => { this.isTransitioning = false; }, 600);
         }
     }
 
     irASlide(index) {
-        if (this.isTransitioning) return;
-        this.isTransitioning = true;
         this.currentIndex = Math.max(0, Math.min(index, this.getTotalSlides() - 1));
         this.actualizarCarrusel();
         this.reiniciarAutoplay();
-        setTimeout(() => { this.isTransitioning = false; }, 600);
     }
 
     agregarEventos() {
-        // Botones de navegación
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', () => this.anterior());
         }
@@ -147,20 +134,16 @@ class Carrusel {
             this.nextBtn.addEventListener('click', () => this.siguiente());
         }
 
-        // Soporte táctil (swipe)
         if (this.track) {
             this.track.addEventListener('touchstart', (e) => this.handleSwipeStart(e), false);
             this.track.addEventListener('touchend', (e) => this.handleSwipeEnd(e), false);
-            this.track.addEventListener('touchmove', (e) => this.handleSwipeMove(e), false);
         }
 
-        // Pausar autoplay al hover
         if (this.container) {
             this.container.addEventListener('mouseenter', () => this.pausarAutoplay());
             this.container.addEventListener('mouseleave', () => this.reanudarAutoplay());
         }
 
-        // Recalcular en resize
         window.addEventListener('resize', () => {
             this.crearDots();
             this.actualizarCarrusel();
@@ -168,37 +151,31 @@ class Carrusel {
     }
 
     handleSwipeStart(e) {
-        if (this.isTransitioning) return;
         this.isSwiping = true;
         this.swipeStartX = e.touches[0].clientX;
-        this.pausarAutoplay(); // Pausar autoplay cuando comienza el swipe
-    }
-
-    handleSwipeMove(e) {
-        if (!this.isSwiping) return;
-        this.swipeEndX = e.touches[0].clientX;
+        this.pausarAutoplay();
     }
 
     handleSwipeEnd(e) {
-        if (!this.isSwiping || this.isTransitioning) return;
+        if (!this.isSwiping) return;
         this.isSwiping = false;
+        this.swipeEndX = e.changedTouches[0].clientX;
 
         const diff = this.swipeStartX - this.swipeEndX;
-        const threshold = 40; // Sensibilidad del swipe
+        const threshold = 40;
 
         if (Math.abs(diff) > threshold) {
             if (diff > 0) {
-                this.siguiente(); // Swipe izquierda -> siguiente
+                this.siguiente();
             } else {
-                this.anterior(); // Swipe derecha -> anterior
+                this.anterior();
             }
         } else {
-            this.reanudarAutoplay(); // Si no fue swipe significativo, reanudar
+            this.reanudarAutoplay();
         }
     }
 
     iniciarAutoplay() {
-        // Solo iniciar si estamos en desktop
         if (window.innerWidth < 768) return;
         
         this.autoplayTimer = setInterval(() => {
@@ -388,7 +365,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Carrusel de Casos de Éxito
     const casoExitoCarrusel = new Carrusel({
         containerSelector: '.casos-carrusel-container',
         trackSelector: '.casos-track',
@@ -405,7 +381,6 @@ document.addEventListener('DOMContentLoaded', function() {
         autoplayInterval: 6000
     });
 
-    // Carrusel de Testimonios
     const testimoniosCarrusel = new Carrusel({
         containerSelector: '.testimonios-carrusel-container',
         trackSelector: '.testimonios-track',
@@ -422,7 +397,6 @@ document.addEventListener('DOMContentLoaded', function() {
         autoplayInterval: 5000
     });
 
-    // Carrusel de Experiencias Reales
     const experienciasCarrusel = new Carrusel({
         containerSelector: '.experiencias-carrusel-container',
         trackSelector: '.experiencias-track',
