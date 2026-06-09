@@ -39,7 +39,8 @@ class Carrusel {
         this.agregarEventos();
         this.actualizarCarrusel();
         
-        if (this.autoplay) {
+        // Solo autoplay en desktop/tablet
+        if (this.autoplay && window.innerWidth >= 768) {
             this.iniciarAutoplay();
         }
     }
@@ -111,7 +112,7 @@ class Carrusel {
             this.currentIndex--;
             this.actualizarCarrusel();
             this.reiniciarAutoplay();
-            setTimeout(() => { this.isTransitioning = false; }, 500);
+            setTimeout(() => { this.isTransitioning = false; }, 600);
         }
     }
 
@@ -123,7 +124,7 @@ class Carrusel {
             this.currentIndex++;
             this.actualizarCarrusel();
             this.reiniciarAutoplay();
-            setTimeout(() => { this.isTransitioning = false; }, 500);
+            setTimeout(() => { this.isTransitioning = false; }, 600);
         }
     }
 
@@ -133,7 +134,7 @@ class Carrusel {
         this.currentIndex = Math.max(0, Math.min(index, this.getTotalSlides() - 1));
         this.actualizarCarrusel();
         this.reiniciarAutoplay();
-        setTimeout(() => { this.isTransitioning = false; }, 500);
+        setTimeout(() => { this.isTransitioning = false; }, 600);
     }
 
     agregarEventos() {
@@ -170,6 +171,7 @@ class Carrusel {
         if (this.isTransitioning) return;
         this.isSwiping = true;
         this.swipeStartX = e.touches[0].clientX;
+        this.pausarAutoplay(); // Pausar autoplay cuando comienza el swipe
     }
 
     handleSwipeMove(e) {
@@ -182,7 +184,7 @@ class Carrusel {
         this.isSwiping = false;
 
         const diff = this.swipeStartX - this.swipeEndX;
-        const threshold = 30; // Reducido para ser más sensible
+        const threshold = 40; // Sensibilidad del swipe
 
         if (Math.abs(diff) > threshold) {
             if (diff > 0) {
@@ -190,10 +192,15 @@ class Carrusel {
             } else {
                 this.anterior(); // Swipe derecha -> anterior
             }
+        } else {
+            this.reanudarAutoplay(); // Si no fue swipe significativo, reanudar
         }
     }
 
     iniciarAutoplay() {
+        // Solo iniciar si estamos en desktop
+        if (window.innerWidth < 768) return;
+        
         this.autoplayTimer = setInterval(() => {
             const totalSlides = this.getTotalSlides();
             if (this.currentIndex >= totalSlides - 1) {
@@ -210,13 +217,13 @@ class Carrusel {
     }
 
     reanudarAutoplay() {
-        if (this.autoplay) {
+        if (this.autoplay && window.innerWidth >= 768) {
             this.iniciarAutoplay();
         }
     }
 
     reiniciarAutoplay() {
-        if (this.autoplay) {
+        if (this.autoplay && window.innerWidth >= 768) {
             this.pausarAutoplay();
             this.iniciarAutoplay();
         }
@@ -224,7 +231,6 @@ class Carrusel {
 
     destruir() {
         this.pausarAutoplay();
-        // Aquí puedes limpiar más recursos si es necesario
     }
 }
 
@@ -233,7 +239,6 @@ class Carrusel {
 // ============================================
 
 function inicializarVideoModal() {
-    // Crear el modal si no existe
     if (!document.getElementById('videoModal')) {
         const modal = document.createElement('div');
         modal.id = 'videoModal';
@@ -249,7 +254,6 @@ function inicializarVideoModal() {
         document.body.appendChild(modal);
     }
 
-    // Agregar estilos del modal si no existen
     if (!document.getElementById('videoModalStyles')) {
         const styles = document.createElement('style');
         styles.id = 'videoModalStyles';
@@ -331,7 +335,6 @@ function inicializarVideoModal() {
         document.head.appendChild(styles);
     }
 
-    // Event listeners para abrir/cerrar modal
     const modal = document.getElementById('videoModal');
     const closeBtn = document.querySelector('.video-modal-close');
 
@@ -342,7 +345,6 @@ function inicializarVideoModal() {
         }
     });
 
-    // Cerrar modal con ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('activo')) {
             cerrarVideoModal();
@@ -375,10 +377,8 @@ function cerrarVideoModal() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🎠 Carruseles cargados');
 
-    // Inicializar modal de videos
     inicializarVideoModal();
 
-    // Agregar listeners a los videos para abrirlos en modal
     const videos = document.querySelectorAll('.video-placeholder video');
     videos.forEach(video => {
         video.style.cursor = 'pointer';
