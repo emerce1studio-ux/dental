@@ -1231,6 +1231,16 @@ section h2 {
     font-size: var(--fs-sm);
 }
 
+.video-presentacion {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.video-presentacion video {
+    width: 100%;
+    border-radius: 12px;
+}
+
 /* ============================================
    ANIMACIONES KEYFRAMES
    ============================================ */
